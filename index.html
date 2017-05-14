@@ -1,1 +1,116 @@
-Hi Uly, how are you?
+<html>
+   <head>
+      <title>Binary system</title>
+<meta charset="utf-8">
+
+<!-- set the CSS -->
+<style type="text/css">
+
+#space2 { position: absolute; visibility: visible; left: 450px; top: 250px; height: 100px; width: 350px; z-index: 200; }
+
+#space1 {position: absolute; visibility: visible; left: 500px; top: 30px; height: 50px; width: 150px; z-index: 200; }
+
+#space3 { position: absolute; visibility: visible; left: 20px; top: 30px; height: 50px; width: 150px; z-index: 200; }
+
+#space4 { position: absolute; visibility: visible; left: 20px; top: 350px; height: 50px; width: 150px; z-index: 200; }
+
+#update_h { position: absolute; visibility: visible; right: 180px; top: 165px; height: 10px; width: 15px; z-index: 200; }
+
+#update_f { position: absolute; visibility: visible; right: 180px; top: 195px; height: 10px; width: 15px; z-index: 200; }
+
+#update_asd { position: absolute; visibility: visible; right: 180px; top: 225px; height: 10px; width: 15px; z-index: 200; }
+
+body {
+	font: 11px Arial;
+	overflow: hidden; /*go in fullscreen*/
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+</style>
+</head>
+
+<body>
+<script src="lib/three.js"></script>
+<script src="lib/OrbitControls.js"></script>
+<script src="lib/dat.gui.js"></script>
+<script src="lib/d3.min.js"></script>
+
+<div id="update_h">
+    <input name="updateButton"
+           type="button"
+           value="Update amplitude"
+           onclick="updateh()" />
+</div>
+
+<div id="update_f">
+    <input name="updateButton"
+           type="button"
+           value="Update frequency"
+           onclick="updatef()" />
+</div>
+
+<div id="update_asd">
+    <input name="updateButton"
+           type="button"
+           value="Update asd"
+           onclick="updateasd()" />
+</div>
+
+<!-- animation with threejs-->
+<div id="space2"></div>
+<!-- frequency graph -->
+<div id="space1"></div>
+<!-- amplitude graph -->
+<div id="space3"></div>
+<!-- asd graph -->
+<div id="space4"></div>
+
+<!--
+<div id="infoBox" title="Demo Information">
+In this simulation it is possible to change the masses of the two body (expressed in solar masses), how slow the time flows (0.1=10% as default), the initial frequqnecy of the gravitatinal waves.
+</div>
+-->
+
+<script type='text/javascript' >
+  var M_c_pass = 0;
+  var M1_pass = 0;
+  var M2_pass = 0;
+  var nu_pass = 0;
+  var freq_pass = 0;
+  var timeArr = [];
+  var freqArr = [];
+  var psiplus = [];
+  var htildeplusArr = [];
+  var hArr = [];
+  var arrData = [];
+  var arrData_2 = [];
+  var data= [];
+  var data_2 = [];
+  var total_array=[];
+  var asdArr=[];
+  var F_aligo = [];
+  var Snoise = [];
+</script>
+
+
+<script src="anithree.js">
+</script>
+
+ <script src="graphd3_freq.js">
+</script>
+
+<script src="graphd3_h.js">
+</script>
+
+
+<script src="graphd3_asd.js">
+</script>
+
+
+</body>
+</html>
